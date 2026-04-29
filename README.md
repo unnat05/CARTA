@@ -27,8 +27,8 @@ Your autonomous buying agent. Search, compare, and save smarter with Carta AI.
 
 ### Prerequisites
 
-- Node.js 18+ installed
-- npm or yarn package manager
+- Node.js 20.9.0 or higher (required for Next.js 16)
+- npm 10.0.0 or higher
 
 ### Installation
 
