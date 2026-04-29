@@ -1,36 +1,171 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Carta - AI-Powered Personal Shopping Agent
 
-## Getting Started
+Your autonomous buying agent. Search, compare, and save smarter with Carta AI.
 
-First, run the development server:
+## 🚀 Features
 
+- **AI-Powered Search**: Natural language product search across multiple marketplaces
+- **Smart Comparison**: Compare products across Amazon, Flipkart, Myntra, AJIO, and Meesho
+- **Price Tracking**: Set alerts and track price history
+- **AI Assistant**: Get personalized shopping advice powered by Google Gemini
+- **Multi-Marketplace**: Search across 5+ Indian marketplaces simultaneously
+- **Mock Data System**: Fully functional with 12+ products for testing and development
+
+## 🛠️ Tech Stack
+
+- **Framework**: Next.js 16 with App Router
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **UI Components**: Radix UI + shadcn/ui
+- **Animations**: Framer Motion
+- **State Management**: Redux Toolkit
+- **Authentication**: Clerk
+- **Database**: Supabase
+- **AI**: Google Gemini API
+
+## 📦 Getting Started
+
+### Prerequisites
+
+- Node.js 18+ installed
+- npm or yarn package manager
+
+### Installation
+
+1. Clone the repository:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone <your-repo-url>
+cd carta
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Set up environment variables:
+```bash
+cp .env.local.example .env.local
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Add your API keys to `.env.local`:
+```env
+# Required for AI features
+NEXT_PUBLIC_GEMINI_API_KEY=your_gemini_api_key
 
-## Learn More
+# Required for authentication
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your_clerk_key
+CLERK_SECRET_KEY=your_clerk_secret
 
-To learn more about Next.js, take a look at the following resources:
+# Optional - for real marketplace data
+NEXT_PUBLIC_AMAZON_API_KEY=your_amazon_key
+NEXT_PUBLIC_FLIPKART_API_KEY=your_flipkart_key
+NEXT_PUBLIC_GOOGLE_SEARCH_API_KEY=your_google_key
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+5. Run the development server:
+```bash
+npm run dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+6. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-## Deploy on Vercel
+## 🎯 Current Status
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### ✅ Completed
+- Complete UI redesign with clean, minimal aesthetic
+- AI assistant with Gemini integration
+- Mock data system with 12+ products
+- Search functionality across multiple categories
+- Product comparison features
+- Price alerts and history tracking
+- Dashboard with all sub-pages
+- Authentication with Clerk
+- Dark mode support
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 🔄 In Progress
+- Real marketplace API integration
+- Price tracking automation
+- Email notifications for alerts
+
+### 📋 Planned
+- Browser extension
+- Mobile app
+- Advanced AI recommendations
+- Social sharing features
+
+## 🏪 Marketplace Integration
+
+The app currently uses **mock data** for development and testing. To enable real marketplace data:
+
+1. Get API keys from:
+   - [Amazon Product Advertising API](https://webservices.amazon.com/paapi5/documentation/)
+   - [Flipkart Affiliate API](https://affiliate.flipkart.com/api-docs)
+   - [Google Custom Search API](https://developers.google.com/custom-search/v1/overview)
+
+2. Add keys to `.env.local`
+
+3. Restart the server
+
+See [MARKETPLACE_INTEGRATION.md](./MARKETPLACE_INTEGRATION.md) for detailed setup instructions.
+
+## 📚 Documentation
+
+- [Redesign Notes](./REDESIGN_NOTES.md) - Complete redesign documentation
+- [Marketplace Integration](./MARKETPLACE_INTEGRATION.md) - API setup guide
+
+## 🧪 Testing
+
+### With Mock Data (Current)
+```bash
+npm run dev
+# Navigate to /dashboard/search
+# Try searching: "iPhone", "Sony headphones", "Nike shoes", "Air fryer"
+```
+
+### Test AI Assistant
+1. Click the chat button (bottom right)
+2. Ask: "What's the best noise-cancelling headphone under ₹30,000?"
+3. Get AI-powered recommendations
+
+## 🎨 Design System
+
+- **Primary Color**: Emerald (#10b981)
+- **Typography**: Plus Jakarta Sans (body), Bricolage Grotesque (headings)
+- **Border Radius**: 12px (rounded-xl), 16px (rounded-2xl)
+- **Spacing**: Consistent 4px grid system
+- **Animations**: Smooth transitions with Framer Motion
+
+## 📱 Pages
+
+### Landing Pages
+- `/` - Home with hero, features, testimonials
+- `/features` - Feature showcase
+- `/how-it-works` - How Carta works
+- `/about` - About the platform
+
+### Dashboard Pages
+- `/dashboard` - Overview with stats and recent activity
+- `/dashboard/search` - AI-powered product search
+- `/dashboard/comparison` - Side-by-side product comparison
+- `/dashboard/history` - Search history
+- `/dashboard/alerts` - Price alerts management
+- `/dashboard/settings` - User settings and preferences
+
+### Auth Pages
+- `/sign-in` - Sign in page
+- `/sign-up` - Sign up page
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## 📄 License
+
+This project is licensed under the MIT License.
+
+## 🙏 Acknowledgments
+
+- Product images from [Unsplash](https://unsplash.com)
+- UI components from [shadcn/ui](https://ui.shadcn.com)
+- Icons from [Lucide](https://lucide.dev)
