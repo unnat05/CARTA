@@ -21,7 +21,7 @@ const INITIAL_MESSAGES: Message[] = [
   {
     id: 'init',
     role: 'assistant',
-    content: "Hi! I'm Carta AI. Ask me anything about products — I can help you find the best deals, compare options, or decide if something is worth buying.",
+    content: "Hi! I'm Carta AI. Ask me anything about products — I can help you find the best deals, compare options, or decide if something is worth buying.\n\nTry asking:\n• Compare iPhone 15 Pro vs Samsung Galaxy S24 Ultra\n• Find the best noise-cancelling headphones\n• Is the Apple Watch Series 9 worth buying?",
   },
 ];
 
@@ -73,7 +73,7 @@ export const AiAssistant = () => {
 
       // Provide helpful fallback if no API key
       if (!content || content.includes('demo mode') || content.includes('API Key')) {
-        content = `I understand you're asking about: "${text}"\n\nI'm currently in demo mode without a Gemini API key configured. Here's what I can tell you:\n\n• Use the Search feature to find products across stores\n• Use Compare to see side-by-side product analysis\n• Set up price alerts to track deals\n\nTo enable full AI responses, add your Gemini API key to the .env.local file as GEMINI_API_KEY or NEXT_PUBLIC_GEMINI_API_KEY.`;
+        content = `I understand you're asking about: "${text}"\n\nI'm currently in demo mode without a Gemini API key configured. Here's what I can tell you:\n\n• Use the Search feature to find products across stores\n• Use Compare to see side-by-side product analysis\n• Set up price alerts to track deals\n\nExample prompts you can try:\n• Compare iPhone 15 Pro vs Samsung Galaxy S24 Ultra\n• Best headphones under ₹20,000\n• Is the Apple Watch Series 9 worth buying?\n\nTo enable full AI responses, add your Gemini API key to the .env.local file as GEMINI_API_KEY or NEXT_PUBLIC_GEMINI_API_KEY.`;
       }
 
       setMessages((prev) => [...prev, {
