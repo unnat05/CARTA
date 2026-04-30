@@ -5,6 +5,7 @@
   "framework": "nextjs",
   "regions": ["bom1"],
   "env": {
+    "GEMINI_API_KEY": "@gemini-api-key",
     "NEXT_PUBLIC_GEMINI_API_KEY": "@gemini-api-key",
     "NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY": "@clerk-publishable-key",
     "CLERK_SECRET_KEY": "@clerk-secret-key"

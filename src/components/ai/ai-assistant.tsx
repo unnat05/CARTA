@@ -73,7 +73,7 @@ export const AiAssistant = () => {
 
       // Provide helpful fallback if no API key
       if (!content || content.includes('demo mode') || content.includes('API Key')) {
-        content = `I understand you're asking about: "${text}"\n\nI'm currently in demo mode without a Gemini API key configured. Here's what I can tell you:\n\n• Use the Search feature to find products across stores\n• Use Compare to see side-by-side product analysis\n• Set up price alerts to track deals\n\nTo enable full AI responses, add your Gemini API key to the .env.local file as NEXT_PUBLIC_GEMINI_API_KEY.`;
+        content = `I understand you're asking about: "${text}"\n\nI'm currently in demo mode without a Gemini API key configured. Here's what I can tell you:\n\n• Use the Search feature to find products across stores\n• Use Compare to see side-by-side product analysis\n• Set up price alerts to track deals\n\nTo enable full AI responses, add your Gemini API key to the .env.local file as GEMINI_API_KEY or NEXT_PUBLIC_GEMINI_API_KEY.`;
       }
 
       setMessages((prev) => [...prev, {
